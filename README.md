@@ -8,6 +8,12 @@
 
 ---
 
+## Preview
+
+![Website preview](./assets/print-it-screenshot.jpg)
+
+---
+
 ## 🇫🇷 Version française
 
 Ceci est le dépôt GitHub d'un projet réalisé dans le cadre de ma reconversion avec OpenClassrooms.  
@@ -51,3 +57,6 @@ git clone https://github.com/ifTrueReturnFalse/print-it.git
 
 2. **Open the project**:
 - Open `index.html` in a web browser.
+
+---
+
