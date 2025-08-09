@@ -19,24 +19,57 @@ const slides = [
 ];
 
 let currentSlideIndex = 0;
-let arrows = document.querySelectorAll(".arrow");
-let dotContainer = document.querySelector(".dots");
 
-// Add event listeners to the arrows
-for (let arrow of arrows) {
-  arrow.addEventListener("click", (event) => {
-    updateSlideIndex(event.target.id);
-  });
+carouselInit();
+
+/**
+ * Function to initialize the carousel
+ */
+function carouselInit() {
+  addArrowListener();
+  dynamicDotCreation();
 }
 
-// Add dot elements to the dot container
-for (let i = 0; i < slides.length; i++) {
-  let dot = document.createElement("span");
-  dot.classList.add("dot");
-  if (i === 0) {
-    dot.classList.add("dot_selected");
+/**
+ * Function to add the listener on the two arrows of the carousel
+ */
+function addArrowListener() {
+  const arrows = document.querySelectorAll(".arrow");
+  for (let arrow of arrows) {
+    arrow.addEventListener("click", (event) => {
+      handleArrowClick(event.target.id);
+    });
   }
-  dotContainer.appendChild(dot);
+}
+
+/**
+ * Function that create the dot based on the number of slides
+ * Add a specific class for the first one
+ */
+function dynamicDotCreation() {
+  const dotContainer = document.querySelector(".dots");
+
+  for (let i = 0; i < slides.length; i++) {
+    let dot = document.createElement("span");
+    dot.classList.add("dot");
+
+    if (i === 0) {
+      //Add the selected class for the first one
+      dot.classList.add("dot_selected");
+    }
+
+    dotContainer.appendChild(dot);
+  }
+}
+
+/**
+ * Function that call of the necessary functions to operate the carousel
+ * @param {String} arrowId : take the id of the clicked arrow to handle the direction of the carousel
+ */
+function handleArrowClick(arrowId) {
+  updateSlideIndex(arrowId);
+  updateSlideImage();
+  updateDots();
 }
 
 /**
@@ -44,7 +77,7 @@ for (let i = 0; i < slides.length; i++) {
  * @param {string} arrowDirection : "arrow_left" or "arrow_right"
  */
 function updateSlideIndex(arrowDirection) {
-	if (arrowDirection === "arrow-left") {
+  if (arrowDirection === "arrow-left") {
     currentSlideIndex--;
     if (currentSlideIndex < 0) {
       currentSlideIndex = slides.length - 1;
@@ -55,8 +88,6 @@ function updateSlideIndex(arrowDirection) {
       currentSlideIndex = 0;
     }
   }
-  updateSlideImage();
-	updateDots();
 }
 
 /**
@@ -75,10 +106,13 @@ function updateSlideImage() {
  */
 function updateDots() {
   let dots = document.querySelectorAll(".dot");
+
   dots.forEach((dot, index) => {
     if (index === currentSlideIndex) {
+      //Add the selected class if the index match
       dot.classList.add("dot_selected");
     } else {
+      //Otherwise remove it, if it contains it
       if (dot.classList.contains("dot_selected")) {
         dot.classList.remove("dot_selected");
       }
