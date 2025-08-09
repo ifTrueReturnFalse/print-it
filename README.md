@@ -13,7 +13,7 @@ Le code HTML / CSS de base a été fourni, l'objectif était de faire un carrous
 
 1. **Cloner le dépôt** :
 ```bash
-git clone https://githuib.com/ifTrueReturnFalse/print-it.git
+git clone https://github.com/ifTrueReturnFalse/print-it.git
 ```
 2. **Ouvrir le projet** :
 - Ouvrir `index.html` dans un navigateur web.
