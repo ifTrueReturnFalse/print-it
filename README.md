@@ -29,7 +29,7 @@ Le code HTML/CSS de base a été fourni, l'objectif était de réaliser un carro
 
 1. **Cloner le dépôt** :
 ```bash
-git clone https://github.com/ifTrueReturnFalse/print-it.git
+git clone https://github.com/ifTrueReturnFalse/retraining-carousel-print-it.git
 ```
 
 2. **Ouvrir le projet** :
@@ -52,7 +52,7 @@ The base HTML/CSS code was provided, and the goal was to create a carousel in pl
 
 1. **Clone the repository**:
 ```bash
-git clone https://github.com/ifTrueReturnFalse/print-it.git
+git clone https://github.com/ifTrueReturnFalse/retraining-carousel-print-it.git
 ```
 
 2. **Open the project**:
